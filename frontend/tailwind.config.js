@@ -7,7 +7,8 @@ module.exports = {
           Rubik: ["Rubik","sans-serif"],
         },
         colors: {
-          'light-gray': "#666666"
+          'light-gray': "#666666",
+          'dark-gray': "#1E232C"
         }
       },
   },
