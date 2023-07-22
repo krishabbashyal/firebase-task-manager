@@ -1,4 +1,5 @@
 <template>
+<!-- mx-4 is currently being used as a way to set the deadspace for the components, this will be implemented globally at some point -->
   <div class = "mt-40 mx-4">
     <h1 class = 'font-medium text-3xl'>Welcome back, it is good to see you again!</h1>
     <form>
