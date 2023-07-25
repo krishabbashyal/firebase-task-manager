@@ -1,13 +1,29 @@
-<template>
-  
+<template class="">
+  <div class="leave-this-class">
+    <div class="flex overflow-x-auto">
+      <project-card/>
+      <project-card/>
+      <project-card/>
+      <project-card/>
+    </div>
+  </div>
 </template>
 
 <script>
-export default {
+import ProjectCard from './components/ProjectCard.vue'
 
+
+
+export default {
+  components: {
+    ProjectCard
+  },
+  name: "CardScroller",
 }
 </script>
 
-<style>
+<style scoped>
+
+
 
 </style>

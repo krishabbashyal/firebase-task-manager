@@ -1,10 +1,12 @@
 <template class="">
-  <div class="leave-this-class mx-4">
-    <div class="flex">
-    <project-card/>
+  <div class="leave-this-class">
+    <div class="flex overflow-x-auto">
+      <project-card/>
+      <project-card/>
+      <project-card/>
+      <project-card/>
+    </div>
   </div>
-  </div>
-
 </template>
 
 <script>

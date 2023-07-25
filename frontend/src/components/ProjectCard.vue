@@ -1,5 +1,5 @@
 <template>
-  <div class="h-56 w-64 bg-white rounded-3xl mx-4">
+  <div class="h-56 w-64 bg-white rounded-3xl mr-3 shrink-0">
     <div class="mx-5">
       <div>
         <span class="font-semibold text-xs inline-block py-1 px-2 rounded-full text-emerald-600 bg-emerald-200 mr-1 mt-7">Development</span>
