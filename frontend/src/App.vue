@@ -6,9 +6,9 @@
         <span class="font-semibold text-xs inline-block py-1 px-2 rounded-full text-emerald-600 bg-emerald-200 mr-1 mt-7">Development</span>
       </div>
       <div class="flex flex-row items-center">
-        <div class="flex flex-row items-center mt-3">
+        <div class="flex flex-row items-end mt-3">
           <p class="font-medium mr-2 text-2xl">JourneyJot</p>
-          <p class="mt-2 text-sm">v1.0</p>
+          <p class="text-sm leading-7 opacity-30">v1.0</p>
         </div>
       </div>
       <div>
