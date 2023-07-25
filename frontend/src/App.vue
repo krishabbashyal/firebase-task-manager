@@ -2,8 +2,11 @@
   <!-- mx-4 is currently being used as a way to set the deadspace for the components, this will be implemented globally at some point -->
   <div class="h-56 w-64 bg-white rounded-3xl mx-4 mt-40">
     <div class="mx-5">
+      <div>
+        <span class="font-semibold text-xs inline-block py-1 px-2 rounded-full text-emerald-600 bg-emerald-200 mr-1 mt-7">Development</span>
+      </div>
       <div class="flex flex-row items-center">
-        <div class="flex flex-row items-center mt-16">
+        <div class="flex flex-row items-center mt-3">
           <p class="font-medium mr-2 text-2xl">JourneyJot</p>
           <p class="mt-2 text-sm">v1.0</p>
         </div>
