@@ -1,25 +1,23 @@
 <template class="">
-  <div class="leave-this-class">
-    <div class="flex overflow-x-auto">
-      <project-card/>
-      <project-card/>
-      <project-card/>
-      <project-card/>
+  <div class="leave-this-class mx-4">
+    <div>
+      <p>Hey, USER!</p>
+      <p>Your Recent Projects</p>
+      <p>14 tasks are assigned to you.</p>
     </div>
+    <card-scroller/>
   </div>
 </template>
 
 <script>
-import ProjectCard from './components/ProjectCard.vue'
-
-
+import CardScroller from './components/CardScroller.vue';
 
 export default {
   components: {
-    ProjectCard
+    CardScroller,
   },
   name: "App",
-}
+};
 </script>
 
 <style>
