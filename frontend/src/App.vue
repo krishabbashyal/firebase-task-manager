@@ -1,20 +1,19 @@
 <template class="">
   <div class="leave-this-class mx-4">
-    <div>
-      <p>Hey, USER!</p>
-      <p>Your Recent Projects</p>
-      <p>14 tasks are assigned to you.</p>
-    </div>
-    <card-scroller/>
+    <section-header class="mt-16"/>
+    <card-scroller class="mt-2"/>
   </div>
 </template>
 
 <script>
 import CardScroller from './components/CardScroller.vue';
+import SectionHeader from './components/SectionHeader.vue';
+
 
 export default {
   components: {
     CardScroller,
+    SectionHeader,
   },
   name: "App",
 };
