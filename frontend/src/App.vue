@@ -1,24 +1,21 @@
-<template class="">
-  <div class="leave-this-class mx-4">
-    <section-header class="mt-16"/>
-    <card-scroller class="mt-2"/>
-  </div>
+<template>
+  <ul>
+    <li v-for="status in supabaseStatus" :key="status.id">Supabase: {{ status.status }}</li>
+  </ul>
 </template>
 
-<script>
-import CardScroller from './components/CardScroller.vue';
-import SectionHeader from './components/SectionHeader.vue';
+<script setup>
+import { ref, onMounted } from "vue";
+import { supabase } from "./lib/supabaseClient";
 
+const supabaseStatus = ref([]);
 
-export default {
-  components: {
-    CardScroller,
-    SectionHeader,
-  },
-  name: "App",
-};
+async function checkStatus() {
+  const { data } = await supabase.from("supabaseStatus").select();
+  supabaseStatus.value = data;
+}
+
+onMounted(() => {
+   checkStatus();
+});
 </script>
-
-<style>
-
-</style>
