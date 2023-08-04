@@ -1,4 +1,4 @@
-<template class="">
+<template>
     <div class="flex overflow-x-auto container">
       <project-card />
       <project-card />

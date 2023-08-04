@@ -1,21 +1,12 @@
 <template>
-  <ul>
-    <li v-for="status in supabaseStatus" :key="status.id">Supabase: {{ status.status }}</li>
-  </ul>
+  <div class="mx-4">
+    <!-- DO NOT MAKE EDITS TO THIS FILE FOR TESTING |||| CREATE A NEW PAGE TO TEST NEW COMPONENTS -->
+    <router-view></router-view>
+  </div>
 </template>
 
-<script setup>
-import { ref, onMounted } from "vue";
-import { supabase } from "./lib/supabaseClient";
-
-const supabaseStatus = ref([]);
-
-async function checkStatus() {
-  const { data } = await supabase.from("supabaseStatus").select();
-  supabaseStatus.value = data;
-}
-
-onMounted(() => {
-   checkStatus();
-});
+<script>
+export default {
+  name: "App",
+};
 </script>

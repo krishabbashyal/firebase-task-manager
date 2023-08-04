@@ -1,6 +1,5 @@
 <template>
-  <!-- mx-4 is currently being used as a way to set the deadspace for the components, this will be implemented globally at some point -->
-  <div class="mt-40 mx-4">
+  <div class="mt-40">
     <h1 class="font-medium text-3xl">
       Welcome back, it is good to see you again!
     </h1>
@@ -8,12 +7,12 @@
       <input
         type="email"
         placeholder="Email"
-        class="placeholder:text-gray placeholder:font-medium w-full h-14 mt-7 mb-2 border rounded-lg pl-4"
+        class="placeholder:text-gray placeholder:font-medium w-full h-14 mt-7 mb-2 border border-input-border rounded-lg pl-4"
       />
       <input
         type="password"
         placeholder="Password"
-        class="placeholder:text-gray placeholder:font-medium w-full h-14 mb-2 border rounded-lg pl-4"
+        class="placeholder:text-gray placeholder:font-medium w-full h-14 mb-2 border border-input-border rounded-lg pl-4"
       />
       <div class="text-right">
         <p class="text-dark-gray font-medium mt-2">Forgot Password?</p>
