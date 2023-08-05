@@ -39,7 +39,8 @@ export default {
       userEmail: "",
       userPassword: ""
     }
-  }
+  },
+  name: "LoginForm"
 }
 
 </script>
