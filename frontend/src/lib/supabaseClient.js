@@ -1,3 +1,6 @@
 import { createClient } from '@supabase/supabase-js'
 
-export const supabase = createClient(process.env.VUE_APP_SUPABASE_URL, process.env.VUE_APP_SUPABASE_API_KEY)
+const supabaseURL = process.env.VUE_APP_SUPABASE_URL
+const supabaseAPI = process.env.VUE_APP_SUPABASE_API_KEY
+
+export const supabase = createClient(supabaseURL, supabaseAPI)
