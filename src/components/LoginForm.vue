@@ -8,16 +8,18 @@
         type="email"
         v-model="userEmail"
         placeholder="Email"
-        class="placeholder:text-gray placeholder:font-medium w-full h-14 mt-7 mb-2 border border-input-border rounded-lg pl-4"
+        class="placeholder:font-medium w-full h-14 mt-7 border border-input-border rounded-lg pl-4"
+        :class="[formError ? 'focus:outline-none placeholder-red-800 border-red-500 border-2 border-solid' : 'placeholder:text-gray border-input-border']"
       />
-      Current Email: <b>{{ userEmail }}</b>
+      <p v-if="formError" class="text-red-500 mt-1">Incorrect Email: <b>{{ userEmail }}</b></p>
       <input
         type="password"
         v-model="userPassword"
         placeholder="Password"
-        class="placeholder:text-gray placeholder:font-medium w-full h-14 mb-2 border border-input-border rounded-lg pl-4"
+         class="placeholder:font-medium w-full h-14 mt-3 border border-input-border rounded-lg pl-4"
+        :class="[formError ? 'focus:outline-none placeholder-red-800 border-red-500 border-2 border-solid' : 'placeholder:text-gray border-input-border']"
       />
-      Current Password: <b> {{ userPassword }}</b>
+      <p v-if="formError" class="text-red-500 mt-1">Incorrect Password: <b>{{ userPassword }}</b></p>
       <div class="text-right">
         <p class="text-dark-gray font-medium mt-2">Forgot Password?</p>
       </div>
@@ -29,6 +31,12 @@
           Login
         </button>
       </div>
+      <button
+        @click.prevent="toggleErrors"
+        class="mt-10 h-14 w-80 bg-red-500 font-medium text-white rounded-lg"
+      >
+        Show Errors: {{ formError }}
+      </button>
     </form>
   </div>
 </template>
@@ -38,17 +46,22 @@ export default {
   data() {
     return {
       userEmail: "",
-      userPassword: ""
-    }
+      userPassword: "",
+      formError: true,
+    };
   },
   methods: {
+    validateForm() {},
+    toggleErrors() {
+      this.formError = !this.formError;
+      console.log(this.formError);
+    },
     submitForm() {
-      console.log(this.userEmail)
-      console.log(this.userPassword)
-    }
+      console.log(this.userEmail);
+      console.log(this.userPassword);
+    },
   },
 
-  name: "LoginForm"
-}
-
+  name: "LoginForm",
+};
 </script>
