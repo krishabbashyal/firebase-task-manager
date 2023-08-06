@@ -1,4 +1,4 @@
-# frontend
+# Steps for running the application
 
 ## Project setup
 ```
