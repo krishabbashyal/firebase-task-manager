@@ -1,7 +1,7 @@
 # An issue tracking application developed for web and mobile devices.
 
 ## Steps for local setup:
-Please ensure that you have some verion of node installed on your machine. This project is using v18.17.0 but any recent version should be fine.
+Please ensure that you have some verion of node installed on your machine. This project is using `v18.17.0` but any recent version should be fine.
 Once that has been verified you can run:
 ```
 npm install
