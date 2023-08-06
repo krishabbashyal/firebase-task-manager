@@ -23,6 +23,7 @@
       </div>
       <div class="flex flex-row justify-center items-center">
         <button
+          @click.prevent="submitForm"
           class="mt-10 h-14 w-80 bg-dark-gray font-medium text-white rounded-lg"
         >
           Login
@@ -40,6 +41,13 @@ export default {
       userPassword: ""
     }
   },
+  methods: {
+    submitForm() {
+      console.log(this.userEmail)
+      console.log(this.userPassword)
+    }
+  },
+
   name: "LoginForm"
 }
 

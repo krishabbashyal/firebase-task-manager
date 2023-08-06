@@ -34,6 +34,7 @@
       Confirm Passowrd: <b>{{ userConfirmPassword }}</b>
       <div class="flex flex-row justify-center items-center">
         <button
+          @click.prevent="submitForm"
           class="mt-10 h-14 w-80 bg-dark-gray font-medium text-white rounded-lg"
         >
           Register
@@ -52,6 +53,13 @@ export default {
       userPassword: "",
       userConfirmPassword: "",
 
+    }
+  },
+    methods: {
+    submitForm() {
+      console.log(this.userEmail)
+      console.log(this.userFirstName)
+      console.log(this.userPassword)
     }
   },
   name: "RegisterForm"
