@@ -82,15 +82,16 @@ export default {
         this.passwordErrorMsg = "This field is required";
         this.passwordError = true;
       } else {
-        this.passwordError = false
-        this.submitForm();
+        this.passwordError = false;
+
+        if (!this.passwordError && !this.emailError) {
+          this.submitForm();
+        }
       }
     },
 
     submitForm() {
-      console.log(this.userEmail);
-      console.log(this.userPassword);
-      alert("Nice, you have logged into your account!")
+      alert("Nice, you have logged into your account!");
     },
   },
 
