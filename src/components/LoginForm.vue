@@ -10,25 +10,25 @@
         placeholder="Email"
         class="placeholder:font-medium w-full h-14 mt-7 border border-input-border rounded-lg pl-4"
         :class="[
-          formError
+          emailError
             ? 'focus:outline-none placeholder-red-800 border-red-500 border-2 border-solid'
             : 'placeholder:text-gray border-input-border',
         ]"
       />
-      <p v-if="formError" class="text-red-500 mt-1">{{ emailErrorMsg }}</p>
+      <p v-if="emailError" class="text-red-500 mt-1">{{ emailErrorMsg }}</p>
       <input
         type="password"
         v-model="userPassword"
         placeholder="Password"
         class="placeholder:font-medium w-full h-14 mt-3 border border-input-border rounded-lg pl-4"
         :class="[
-          formError
+          passwordError
             ? 'focus:outline-none placeholder-red-800 border-red-500 border-2 border-solid'
             : 'placeholder:text-gray border-input-border',
         ]"
       />
-      <p v-if="formError" class="text-red-500 mt-1">
-        Incorrect Password: <b>{{ userPassword }}</b>
+      <p v-if="passwordError" class="text-red-500 mt-1">
+        {{ passwordErrorMsg }}
       </p>
       <div class="text-right">
         <p class="text-dark-gray font-medium mt-2">Forgot Password?</p>
@@ -41,12 +41,6 @@
           Login
         </button>
       </div>
-      <button
-        @click.prevent="toggleErrors"
-        class="mt-10 h-14 w-80 bg-red-500 font-medium text-white rounded-lg"
-      >
-        Show Errors: {{ formError }}
-      </button>
     </form>
   </div>
 </template>
@@ -57,32 +51,46 @@ export default {
     return {
       userEmail: "",
       userPassword: "",
-      formError: false,
+
       emailErrorMsg: "",
+      emailError: false,
+
       passwordErrorMsg: "",
+      passwordError: false,
+
       validEmail: true,
     };
   },
   methods: {
     validateForm() {
-      if (this.userEmail.length === 0) {
-        this.formError = true;
-        this.emailErrorMsg = "This field is required"
-      }
-      if (this.userPassword.length === 0) {
-        this.formError = true;
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      this.validEmail = emailPattern.test(this.userEmail);
+      console.log("Email valid: " + this.validEmail);
+
+      if (this.validEmail) {
+        this.emailError = false;
       } else {
+        this.emailErrorMsg = "Please enter a valid email address";
+        this.emailError = true;
+      }
+      if (this.userEmail.length === 0) {
+        this.emailErrorMsg = "This field is required";
+        this.emailError = true;
+      }
+
+      if (this.userPassword.length === 0) {
+        this.passwordErrorMsg = "This field is required";
+        this.passwordError = true;
+      } else {
+        this.passwordError = false
         this.submitForm();
       }
     },
 
-    toggleErrors() {
-      this.formError = !this.formError;
-    },
     submitForm() {
-      this.formError = false;
       console.log(this.userEmail);
       console.log(this.userPassword);
+      alert("Nice, you have logged into your account!")
     },
   },
 
