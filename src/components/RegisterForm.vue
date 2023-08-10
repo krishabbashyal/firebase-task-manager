@@ -4,6 +4,7 @@
       Hello there, register an account to get started!
     </h1>
     <form>
+      <!-- input field for email -->
       <input
         type="email"
         v-model="userEmail"
@@ -16,20 +17,24 @@
         ]"
       />
       <p v-if="emailError" class="text-red-500 mt-1">{{ emailErrorMsg }}</p>
+
+      <!-- input field for display name -->
       <input
         type="text"
-        v-model="userFirstName"
-        placeholder="First Name"
+        v-model="userDisplayName"
+        placeholder="Display Name"
         class="placeholder:font-medium w-full h-14 mt-3 border border-input-border rounded-lg pl-4"
         :class="[
-          firstNameError
+          displayNameError
             ? 'focus:outline-none placeholder-red-800 border-red-500 border-2 border-solid'
             : 'placeholder:text-gray border-input-border',
         ]"
       />
-      <p v-if="firstNameError" class="text-red-500 mt-1">
-        {{ passwordErrorMsg }}
+      <p v-if="displayNameError" class="text-red-500 mt-1">
+        {{ displayNameErrorMsg }}
       </p>
+
+      <!-- input field for password -->
       <input
         type="password"
         v-model="userPassword"
@@ -44,6 +49,8 @@
       <p v-if="passwordError" class="text-red-500 mt-1">
         {{ passwordErrorMsg }}
       </p>
+
+      <!-- input field for confirm password -->
       <input
         type="password"
         v-model="userConfirmPassword"
@@ -72,21 +79,25 @@
 </template>
 
 <script>
-import { supabase } from "../lib/supabaseClient.js"
+import { supabase } from "../lib/supabaseClient.js";
 
 export default {
   data() {
     return {
       userEmail: "",
-      userFirstName: "",
+      userDisplayName: "",
+      userLastName: "",
       userPassword: "",
       userConfirmPassword: "",
 
       emailErrorMsg: "",
       emailError: false,
 
-      firstNameErrorMsg: "",
-      firstNameError: false,
+      displayNameErrorMsg: "",
+      displayNameError: false,
+
+      lastNameErrorMsg: "",
+      lastNameError: false,
 
       passwordErrorMsg: "",
       passwordError: false,
@@ -113,11 +124,11 @@ export default {
         this.emailError = true;
       }
 
-      if (this.userFirstName.length === 0) {
-        this.firstNameErrorMsg = "This field is required";
-        this.firstNameError = true;
+      if (this.userDisplayName.length === 0) {
+        this.displayNameErrorMsg = "This field is required";
+        this.displayNameError = true;
       } else {
-        this.firstNameError = false
+        this.displayNameError = false;
       }
 
       if (this.userPassword.length === 0) {
@@ -131,41 +142,45 @@ export default {
         this.confirmPasswordErrorMsg = "This field is required";
         this.confirmPasswordError = true;
       } else {
-        if (this.checkPasswords()){
+        if (this.checkPasswords()) {
           this.confirmPasswordError = false;
-        }
-        else {
-          this.confirmPasswordErrorMsg = "Passwords do not match"
-          this.confirmPasswordError = true
+        } else {
+          this.confirmPasswordErrorMsg = "Passwords do not match";
+          this.confirmPasswordError = true;
         }
       }
 
-      if (!this.emailError && !this.firstNameError && !this.passwordError && !this.confirmPasswordError) {
+      if (
+        !this.emailError &&
+        !this.displayNameError &&
+        !this.passwordError &&
+        !this.confirmPasswordError
+      ) {
         this.submitForm();
       }
     },
 
-    checkPasswords(){
-      if (this.userPassword === this.userConfirmPassword){
-        return true
+    checkPasswords() {
+      if (this.userPassword === this.userConfirmPassword) {
+        return true;
       } else {
-        return false
+        return false;
       }
     },
 
     async submitForm() {
-    const { data, error } = await supabase.auth.signUp({
-      email: this.userEmail,
-      password: this.userPassword,
-      options: {
-        data: {
-          first_name: this.userFirstName
-        }
-      }
-    })
+      const { data, error } = await supabase.auth.signUp({
+        email: this.userEmail,
+        password: this.userPassword,
+        options: {
+          data: {
+            display_name: this.userDisplayName,
+          },
+        },
+      });
 
-    console.log("Data: " + JSON.stringify(data))
-    console.log("Error: " + error)
+      console.log("Data: " + JSON.stringify(data));
+      console.log("Error: " + error);
     },
   },
 

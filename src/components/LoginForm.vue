@@ -46,6 +46,8 @@
 </template>
 
 <script>
+import { supabase } from "../lib/supabaseClient.js";
+
 export default {
   data() {
     return {
@@ -89,8 +91,14 @@ export default {
       }
     },
 
-    submitForm() {
-      alert("Nice, you have logged into your account!");
+    async submitForm() {
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email: this.userEmail,
+        password: this.userPassword
+      });
+
+      console.log("Data: " + JSON.stringify(data));
+      console.log("Error: " + error);
     },
   },
 
