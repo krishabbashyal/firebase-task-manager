@@ -65,7 +65,6 @@ export default {
     validateForm() {
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       this.validEmail = emailPattern.test(this.userEmail);
-      console.log("Email valid: " + this.validEmail);
 
       if (this.validEmail) {
         this.emailError = false;
@@ -83,10 +82,10 @@ export default {
         this.passwordError = true;
       } else {
         this.passwordError = false;
+      }
 
-        if (!this.passwordError && !this.emailError) {
-          this.submitForm();
-        }
+      if (!this.passwordError && !this.emailError) {
+        this.submitForm();
       }
     },
 
