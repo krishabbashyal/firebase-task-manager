@@ -72,6 +72,8 @@
 </template>
 
 <script>
+import { supabase } from "../lib/supabaseClient.js"
+
 export default {
   data() {
     return {
@@ -109,7 +111,7 @@ export default {
       if (this.userEmail.length === 0) {
         this.emailErrorMsg = "This field is required";
         this.emailError = true;
-      } 
+      }
 
       if (this.userFirstName.length === 0) {
         this.firstNameErrorMsg = "This field is required";
@@ -151,8 +153,19 @@ export default {
       }
     },
 
-    submitForm() {
-      alert("Nice, you have created your account!");
+    async submitForm() {
+    const { data, error } = await supabase.auth.signUp({
+      email: this.userEmail,
+      password: this.userPassword,
+      options: {
+        data: {
+          first_name: this.userFirstName
+        }
+      }
+    })
+
+    console.log("Data: " + JSON.stringify(data))
+    console.log("Error: " + error)
     },
   },
 
