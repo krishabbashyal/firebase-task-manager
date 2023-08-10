@@ -4,6 +4,7 @@
       Welcome back, it is good to see you again!
     </h1>
     <form>
+      <!-- input field for email -->
       <input
         type="email"
         v-model="userEmail"
@@ -16,6 +17,7 @@
         ]"
       />
       <p v-if="emailError" class="text-red-500 mt-1">{{ emailErrorMsg }}</p>
+      <!-- input field for password -->
       <input
         type="password"
         v-model="userPassword"
