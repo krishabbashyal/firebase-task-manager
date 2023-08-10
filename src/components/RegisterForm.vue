@@ -58,15 +58,13 @@
       <p v-if="confirmPasswordError" class="text-red-500 mt-1">
         {{ confirmPasswordErrorMsg }}
       </p>
-      <div class="text-right">
-        <p class="text-dark-gray font-medium mt-2">Forgot Password?</p>
-      </div>
+
       <div class="flex flex-row justify-center items-center">
         <button
           @click.prevent="validateForm"
           class="mt-10 h-14 w-80 bg-dark-gray font-medium text-white rounded-lg"
         >
-          Login
+          Register
         </button>
       </div>
     </form>
