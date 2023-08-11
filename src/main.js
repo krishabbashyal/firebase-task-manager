@@ -10,6 +10,14 @@ const router = createRouter({
   history: createWebHistory(),
   routes: [
     {
+      path: "/",
+      name: "Landing Page",
+      component: () => import("./pages/DashboardPage"),
+      meta: {
+        authRequired: true,
+      },
+    },
+    {
       path: "/login",
       name: "Login",
       component: () => import("./pages/LoginPage"),
@@ -46,7 +54,8 @@ const router = createRouter({
 
 /* eslint-disable no-unused-vars */
 
-async function isLoggedIn() {
+// move to another section eventually as this is likely something that will be used often, maybe it can live in /lib with all of the other supabase things
+async function checkAuthentication() {
   const { data: { user } } = await supabase.auth.getUser();
   if (user) {
     return true;
@@ -56,7 +65,8 @@ async function isLoggedIn() {
 }
 
 router.beforeEach(async (to, from, next) => {
-  if (to.meta.authRequired && !(await isLoggedIn())) {
+  const isLoggedIn = await checkAuthentication()
+  if (to.meta.authRequired && !isLoggedIn) {
     next("/login");
   } else {
     next();
@@ -68,3 +78,5 @@ router.beforeEach(async (to, from, next) => {
 
 app.use(router);
 app.mount("#app");
+
+export default router

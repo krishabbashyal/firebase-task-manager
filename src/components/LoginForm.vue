@@ -48,7 +48,9 @@
 </template>
 
 <script>
+import router from '@/main.js';
 import { supabase } from "../lib/supabaseClient.js";
+
 
 export default {
   data() {
@@ -96,11 +98,13 @@ export default {
     async submitForm() {
       const { data, error } = await supabase.auth.signInWithPassword({
         email: this.userEmail,
-        password: this.userPassword
+        password: this.userPassword,
       });
 
-      console.log("Data: " + JSON.stringify(data));
-      console.log("Error: " + error);
+      if (!error) {
+        console.log(data)
+        router.push({ name: "Dashboard" });
+      }
     },
   },
 
