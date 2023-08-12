@@ -16,10 +16,6 @@ Mosaic excels in breaking down complex projects into manageable tasks. This feat
 
 Once tasks are identified, Mosaic provides an intuitive interface for managing them. Users can assign tasks to individuals or teams, set deadlines, and prioritize tasks based on their significance. This ensures that everyone involved is aware of their responsibilities and the project's timeline.
 
-### Collaboration and Communication
-
-Collaboration lies at the heart of Mosaic. Whether working individually or within a team, users can communicate efficiently through the platform. Discussions, updates, and file sharing are seamlessly integrated into the task management process, reducing the need for multiple communication channels.
-
 ### Progress Tracking
 
 Mosaic offers real-time progress tracking for each task. Users can monitor how tasks are advancing, identify bottlenecks, and take corrective actions if necessary. This transparency keeps projects on track and ensures that goals are met within the desired timeframe.
