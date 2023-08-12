@@ -1,11 +1,18 @@
 <template>
-  <div>
-    <p>This is the webpage that will be used to view and develop components</p>
-  </div>
+    <div>
+      <profile-bar/>
+    </div>
 </template>
 
 <script>
+import ProfileBar from './ProfileBar.vue';
+
+
 export default {
-  name: "ComponentWorkspace",
+  components: {
+    ProfileBar
+  },
+  name: "CardScroller",
 };
 </script>
+
