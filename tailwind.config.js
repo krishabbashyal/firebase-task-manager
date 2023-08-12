@@ -10,7 +10,7 @@ module.exports = {
           'off-white': "#F5F5F5",
           'accent-dark': "#1E232C",
           'accent-light':"#35C2C1",
-          'border-seperate': "#E8ECF4",
+          'create-separation': "#E8ECF4",
           'form-placeholder': "#8391A1",
           'error-text': "#991B1B",
           'error-border':"#EF4444",
