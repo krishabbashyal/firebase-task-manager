@@ -14,7 +14,7 @@ Mosaic excels in breaking down complex projects into manageable tasks. This feat
 
 ### Task Management
 
-Once tasks are identified, Mosaic provides an intuitive interface for managing them. Users can assign tasks to individuals or teams, set deadlines, and prioritize tasks based on their significance. This ensures that everyone involved is aware of their responsibilities and the project's timeline.
+Once tasks are identified, Mosaic provides an intuitive interface for managing them. Users can assign tasks to individuals, and prioritize tasks based on their significance. This ensures that everyone involved is aware of their responsibilities and the project's timeline.
 
 ### Progress Tracking
 
