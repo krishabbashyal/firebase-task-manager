@@ -42,7 +42,7 @@ const router = createRouter({
       },
     },
     {
-      path: "/component-workspace",
+      path: "/workspace",
       name: "Workspace",
       component: () => import("./pages/WorkspacePage"),
       meta: {
