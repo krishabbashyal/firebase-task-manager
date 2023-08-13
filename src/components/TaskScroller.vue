@@ -1,5 +1,5 @@
 <template>
-  <div class="container space-y-2">
+  <div class="container space-y-2 scroll-x-auto">
       <task-card/>
       <task-card/>
       <task-card/>
@@ -8,6 +8,11 @@
       <task-card/>
       <task-card/>
       <task-card/>
+      <task-card class="mb-56"/>
+    
+
+
+
     </div>
 </template>
 

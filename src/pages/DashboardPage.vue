@@ -1,36 +1,31 @@
 <template>
-  <div>
-    <section-header class="mt-16 mb-1" />
-    <card-scroller />
-      <div class="flex flex-row justify-center items-center">
-        <button
-          @click="signOut"
-          class="mt-10 h-14 w-80 bg-dark-gray font-medium text-white rounded-lg"
-        >
-          Sign Out
-        </button>
-      </div>
-  </div>
+    <div>
+      <profile-bar/>
+      <section-header sectionHeader="Your Categories"/>
+      <card-scroller/>
+      <section-header sectionHeader="Your Tasks"/>
+      <task-scroller class="mb-14"/>
+      <bottom-navagation/>
+    </div>
 </template>
 
 <script>
+import BottomNavagation from '../components/BottomNavagation.vue';
+import CardScroller from '../components/CardScroller.vue';
+import ProfileBar from '../components/ProfileBar.vue';
+import SectionHeader from '../components/SectionHeader.vue';
+import TaskScroller from '../components/TaskScroller.vue';
 
-import SectionHeader from "@/components/SectionHeader.vue";
-import CardScroller from "@/components/CardScroller.vue";
-import { supabase } from "../lib/supabaseClient.js";
 
 export default {
   components: {
+    ProfileBar,
     SectionHeader,
     CardScroller,
-  },
-  methods: {
-    async signOut() {
-      const { error } = await supabase.auth.signOut();
-      console.log(error)
-      window.location.reload();
-    },
+    TaskScroller,
+    BottomNavagation
   },
   name: "DashboardPage",
 };
 </script>
+
