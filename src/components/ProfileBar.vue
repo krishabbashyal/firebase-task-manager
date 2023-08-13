@@ -8,7 +8,7 @@
       <div>
         <img
           class="w-[3.125rem] h-[3.125rem] rounded-full"
-          src="../assets/images/defaultProfilePicture.svg"
+          src="../assets/images/profilePicture.svg"
           alt=""
         />
       </div>

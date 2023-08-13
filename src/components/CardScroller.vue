@@ -1,8 +1,11 @@
 <template>
-    <div class="flex overflow-x-auto container">
+    <div class="flex container overflow-x-auto space-x-3">
       <project-category-card/>
+      <project-category-card/>
+      <project-category-card/>
+
     </div>
-</template>
+</template>s
 
 <script>
 
