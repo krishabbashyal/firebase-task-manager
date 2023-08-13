@@ -1,5 +1,5 @@
 <template>
-  <div class="container overflow-y-scroll space-y-2">
+  <div class="container space-y-2">
       <task-card/>
       <task-card/>
       <task-card/>
