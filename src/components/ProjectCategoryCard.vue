@@ -17,7 +17,7 @@
       </div>
       <p class="text-sm font-medium text-right">34%</p>
       <div
-        class="w-full bg-off-white rounded-full h-[0.313rem] "
+        class="w-full bg-zinc-200 rounded-full h-[0.313rem] "
       >
         <div
           class="bg-accent-dark h-[0.313rem] rounded-full"
