@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="fetchComplete" class="mt-8 flex justify-between">
+    <div v-if="fetchComplete" class="mt-14 flex justify-between">
       <div>
         <p class="font-medium text-xl">Hey, {{ displayName }} 👋</p>
         <p class="-mt-0.5">Let’s have a productive day.</p>
