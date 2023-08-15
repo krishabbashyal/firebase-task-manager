@@ -1,15 +1,18 @@
 <template>
   <div>
-    <login-form/>
+    <profile-card/>
+    <bottom-navagation/>
   </div>
 </template>
 
 <script>
-import LoginForm from "../components/LoginForm.vue";
+import BottomNavagation from '@/components/BottomNavagation.vue';
+import ProfileCard from "../components/ProfileCard.vue";
 
 export default {
   components: {
-    LoginForm,
+    ProfileCard,
+    BottomNavagation
   },
   name: "ProfilePage",
 };

@@ -42,6 +42,14 @@ const router = createRouter({
       },
     },
     {
+      path: "/profile",
+      name: "Profile",
+      component: () => import("./pages/ProfilePage"),
+      meta: {
+        authRequired: true,
+      },
+    },
+    {
       path: "/workspace",
       name: "Workspace",
       component: () => import("./pages/WorkspacePage"),
