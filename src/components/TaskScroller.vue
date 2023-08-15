@@ -5,7 +5,6 @@
       <task-card/>
       <task-card/>
       <task-card/>
-      <task-card/>
       <task-card class="mb-56"/>
     </div>
 </template>

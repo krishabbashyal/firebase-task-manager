@@ -3,6 +3,7 @@
       <project-category-card/>
       <project-category-card/>
       <project-category-card/>
+      <project-category-card/>
     </div>
 </template>s
 
