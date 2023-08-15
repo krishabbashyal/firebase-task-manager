@@ -1,13 +1,20 @@
 <template>
   <div>
-    <p>Hey, Krishab!</p>
-    <p class="text-2xl font-medium">Your Recent Projects</p>
-    <p class="text-gray">14 tasks are assigned to you.</p>
+    <div class="flex flex-row justify-between items-center mt-7 mb-3.5">
+    <p class="text-xl font-medium">{{ sectionHeader }}</p>
+    <p class="text-accent-light text-sm"><a href="">See All</a></p>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
+  props: {
+  sectionHeader: {
+    type: String,
+    required: true
+  }
+},
   name: "SectionHeader",
 };
 </script>

@@ -1,11 +1,18 @@
 <template>
-  <div>
-    <p>This is the webpage that will be used to view and develop components</p>
-  </div>
+    <div>
+      <profile-card/>
+    </div>
 </template>
 
 <script>
+import ProfileCard from './ProfileCard.vue';
+
+
 export default {
+  components: {
+    ProfileCard
+  },
   name: "ComponentWorkspace",
 };
 </script>
+
