@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-28">
+  <div class="mt-14">
     <h1 class="font-medium text-3xl">
       Hello there, register an account to get started!
     </h1>
@@ -83,8 +83,8 @@
       <button class="w-48 h-14 mt-3 bg-white border border-create-separation rounded-lg ">
         <img class="mx-auto" src="../assets/images/googleIcon.svg" alt="">
       </button>
-      <div class="font-semibold fixed bottom-10 right-0 left-0 z-50">
-        <p>Already have an account? <span @click="loginRedirect" class="text-accent-light">Login Now</span></p>
+      <div class="font-semibold fixed bottom-8 right-0 left-0 z-50">
+        <p>Already have an account? <button @click="loginRedirect" class="text-accent-light">Login Now</button></p>
       </div>
     </div>
   </div>
