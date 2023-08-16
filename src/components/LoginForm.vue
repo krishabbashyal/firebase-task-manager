@@ -1,9 +1,11 @@
 <template>
-  <div class="mt-14">
+  <div class="mt-24">
     <h1 class="font-medium text-3xl">
       Welcome back, it is good to see you again!
     </h1>
-    <alert-display/>
+    <div v-if="showAlert">
+      <alert-display/>
+    </div>
     <form>
       <!-- input field for email -->
       <input
@@ -81,6 +83,10 @@ export default {
       passwordError: false,
 
       validEmail: true,
+
+      showAlert: false,
+      alertMsg: ""
+
     };
   },
   methods: {
