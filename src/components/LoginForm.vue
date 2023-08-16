@@ -1,8 +1,9 @@
 <template>
-  <div class="mt-40">
+  <div class="mt-28">
     <h1 class="font-medium text-3xl">
       Welcome back, it is good to see you again!
     </h1>
+    <alert-display/>
     <form>
       <!-- input field for email -->
       <input
@@ -46,15 +47,28 @@
         </button>
       </div>
     </form>
+    <div class="text-center">
+      <p class="mt-8 text-sm text-accent-neutral font-semibold">Or Login With</p>
+      <button class="w-48 h-14 mt-3 bg-white border border-create-separation rounded-lg ">
+        <img class="mx-auto" src="../assets/images/googleIcon.svg" alt="">
+      </button>
+      <div class="font-semibold fixed bottom-10 right-0 left-0 z-50">
+        <p>Don't have an account? <span @click="registerRedirect" class="text-accent-light">Register Now</span></p>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import router from '@/main.js';
 import { supabase } from "../lib/supabaseClient.js";
+import AlertDisplay from './AlertDisplay.vue';
 
 
 export default {
+  components: {
+    AlertDisplay
+  },
   data() {
     return {
       userEmail: "",
@@ -106,6 +120,10 @@ export default {
         console.log(error)
       }
     },
+
+    registerRedirect(){
+      router.push({ name: "Register" })
+    }
   },
 
   name: "LoginForm",
