@@ -1,6 +1,6 @@
-# Welcome to Mosaic: Your Ultimate Task Management Tool.
+# Welcome to Mosaic: Your Ultimate Task Management Tool
 
-Mosaic is a powerful software designed to facilitate the systematic deconstruction and management of tasks necessary for successfully completing projects or assignments, whether they are pursued individually or collaboratively within a team.
+Mosaic is a powerful software designed to facilitate the systematic deconstruction and management of tasks necessary for successfully completing projects or assignments, whether pursued individually or collaboratively within a team.
 
 ## Introduction
 
@@ -14,7 +14,7 @@ Mosaic excels in breaking down complex projects into manageable tasks. This feat
 
 ### Task Management
 
-Once tasks are identified, Mosaic provides an intuitive interface for managing them. Users can assign tasks to individuals, and prioritize tasks based on their significance. This ensures that everyone involved is aware of their responsibilities and the project's timeline.
+Once tasks are identified, Mosaic provides an intuitive interface for managing them. Users can assign tasks to individuals, prioritize tasks based on their significance, and set due dates. This ensures that everyone involved is aware of their responsibilities and the project timeline.
 
 ### Progress Tracking
 
@@ -24,21 +24,25 @@ Mosaic offers real-time progress tracking for each task. Users can monitor how t
 
 Every project is unique, and Mosaic recognizes that. The software allows users to tailor workflows to match their project's specific requirements. Customizable statuses, labels, and task categories enhance adaptability and fit seamlessly into existing processes.
 
-## Local Setup Steps:
-Make sure you have Node.js installed on your machine. This project uses `v18.17.0`, but any recent version should work.
-After verifying Node.js, run the following command to install all required project dependencies:
-```
-npm install
-```
-Create a .env file in the project's root folder. Store the credentials for the Supabase server that powers the application's backend in this file, you will have to reach out to someone for this.
+## Local Setup Steps
 
-Once the above steps are done, you can run the following command to launch the application on your localhost:
+To set up Mosaic locally, follow these steps:
 
-Once that has been created, you will have to create a .env file in the root of the project folder. This will be where we store the credentials to the supabase server that is powering the backend of this application. 
+1. Ensure Node.js is installed on your machine. This project uses `v18.17.0`, but any recent version should work.
 
-Once those two steps are completed you can run:
+2. After verifying Node.js, open your terminal and navigate to the project directory.
 
-```
-npm run serve
-```
-You can explore different routes by checking the main.js file in the root directory.
+3. Run the `npm install` command to install all required project dependencies:
+
+4. Create a `.env` file in the project's root folder. Store the credentials for the Supabase server that powers the application's backend in this file. You will need to obtain these credentials from a designated person.
+
+5. Once the above steps are completed, you can launch the application on your localhost by running `npm run serve`
+
+
+6. Explore different routes by checking the `main.js` file in the root directory.
+
+Remember to reach out for the Supabase server credentials to successfully set up the backend of the application.
+
+Happy task managing with Mosaic!
+
+
