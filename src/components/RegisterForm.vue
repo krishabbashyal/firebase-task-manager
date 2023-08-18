@@ -1,8 +1,11 @@
 <template>
-  <div class="mt-40">
+  <div class="mt-32">
     <h1 class="font-medium text-3xl">
       Hello there, register an account to get started!
     </h1>
+    <div v-if="showAlert">
+      <alert-display :alertText="alertMsg"/>
+    </div>
     <form>
       <!-- input field for email -->
       <input
@@ -77,14 +80,36 @@
         </button>
       </div>
     </form>
+    <!-- <div class="text-center">
+      <p class="mt-8 text-sm text-accent-neutral font-semibold">
+        Or Register With
+      </p>
+      <button
+        class="w-48 h-14 mt-3 bg-white border border-create-separation rounded-lg"
+      >
+        <img class="mx-auto" src="../assets/images/googleIcon.svg" alt="" />
+      </button> -->
+      <div class="font-semibold fixed bottom-10 right-0 left-0 z-50 text-center">
+        <p>
+          Already have an account?
+          <button @click="loginRedirect" class="text-accent-light">
+            Login Now
+          </button>
+        </p>
+      </div>
+    <!-- </div> -->
   </div>
 </template>
 
 <script>
-import router from '@/main.js';
+import router from "@/main.js";
 import { supabase } from "../lib/supabaseClient.js";
+import AlertDisplay from "./AlertDisplay.vue";
 
 export default {
+  components: {
+    AlertDisplay,
+  },
   data() {
     return {
       userEmail: "",
@@ -109,6 +134,9 @@ export default {
       confirmPasswordError: false,
 
       validEmail: true,
+
+      showAlert: false,
+      alertMsg: "",
     };
   },
   methods: {
@@ -182,8 +210,13 @@ export default {
         console.log(data);
         router.push({ name: "Dashboard" });
       } else {
-        console.log(error);
+        this.showAlert = true
+        this.alertMsg = error.message
       }
+    },
+
+    loginRedirect() {
+      router.push({ name: "Login" });
     },
   },
 
