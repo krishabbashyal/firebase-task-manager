@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-32">
+  <div class="mt-36">
     <h1 class="font-medium text-3xl">
       Welcome back, it is good to see you again!
     </h1>

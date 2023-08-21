@@ -41,12 +41,19 @@
 <script>
 import router from "@/main.js";
 export default {
+  data() {
+    return {
+      modalOpen: false
+    }
+
+  },
   methods: {
     dashboardClicked() {
       router.push({ name: "Dashboard" });
     },
     createClicked() {
-      alert("Create new");
+      this.modalOpen = !this.modalOpen
+      console.log(this.modalOpen)
     },
     profileClicked() {
       router.push({ name: "Profile" });
