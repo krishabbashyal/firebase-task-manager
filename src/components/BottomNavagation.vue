@@ -2,9 +2,9 @@
   <div>
     <div class="fixed bottom-4 mx-4 right-0 left-0 z-50">
       <div v-if="modalOpen">
-        <div class="flex gap-3 text-white mb-1.5 h-[50px] text-center">
-          <button class="bg-accent-light w-full rounded-2xl">Create a new project</button>
-          <button class="bg-accent-light w-full rounded-2xl">Create a new task</button>
+        <div class="flex gap-2 text-white mb-1.5 h-[56px] text-center font-medium">
+          <button class="bg-accent-light w-full rounded-2xl">Create new project</button>
+          <button class="bg-accent-light w-full rounded-2xl">Create new task</button>
         </div>
       </div>
       <div
