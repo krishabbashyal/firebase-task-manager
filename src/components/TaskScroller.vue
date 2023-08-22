@@ -1,5 +1,5 @@
 <template>
-  <div class="container space-y-2 scroll-x-auto">
+  <div class="space-y-2 w-full">
       <task-card/>
       <task-card/>
       <task-card/>
@@ -24,16 +24,3 @@ export default {
   name: "TaskScroller",
 };
 </script>
-
-<style scoped>
-.container {
-  overflow-x: scroll;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
-}
-.container::-webkit-scrollbar {
-  /* WebKit */
-  width: 0;
-  height: 0;
-}
-</style>

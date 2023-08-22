@@ -1,5 +1,5 @@
 <template>
-    <div class="flex container overflow-x-auto space-x-3">
+    <div class="flex scroll-hider overflow-x-auto w-full space-x-3">
       <project-category-card/>
       <project-category-card/>
       <project-category-card/>
@@ -24,12 +24,12 @@ export default {
 </script>
 
 <style scoped>
-.container {
+.scroll-hider {
   overflow-y: scroll;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* Internet Explorer 10+ */
 }
-.container::-webkit-scrollbar {
+.scroll-hider::-webkit-scrollbar {
   /* WebKit */
   width: 0;
   height: 0;

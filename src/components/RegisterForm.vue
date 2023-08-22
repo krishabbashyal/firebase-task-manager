@@ -1,5 +1,5 @@
 <template>
-  <div class=" xs:mt-20 sm:mt-36">
+  <div class="xs:mt-16 sm:mt-36">
     <h1 class="font-medium text-3xl">
       Hello there, register an account to get started!
     </h1>
