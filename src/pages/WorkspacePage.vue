@@ -1,11 +1,11 @@
 <template>
   <div>
-  <component-workspace/>
+    <component-workspace />
   </div>
 </template>
 
 <script>
-import ComponentWorkspace from '../components/ComponentWorkspace.vue';
+import ComponentWorkspace from "../components/ComponentWorkspace.vue";
 
 export default {
   components: {
@@ -14,4 +14,3 @@ export default {
   name: "WorkspacePage",
 };
 </script>
-

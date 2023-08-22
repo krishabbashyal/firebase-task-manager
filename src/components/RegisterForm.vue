@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-32">
+  <div class="xs:mt-16 sm:mt-36">
     <h1 class="font-medium text-3xl">
       Hello there, register an account to get started!
     </h1>
@@ -80,7 +80,7 @@
         </button>
       </div>
     </form>
-    <!-- <div class="text-center">
+    <div class="text-center">
       <p class="mt-8 text-sm text-accent-neutral font-semibold">
         Or Register With
       </p>
@@ -88,7 +88,7 @@
         class="w-48 h-14 mt-3 bg-white border border-create-separation rounded-lg"
       >
         <img class="mx-auto" src="../assets/images/googleIcon.svg" alt="" />
-      </button> -->
+      </button>
       <div class="font-semibold fixed bottom-10 right-0 left-0 z-50 text-center">
         <p>
           Already have an account?
@@ -97,7 +97,7 @@
           </button>
         </p>
       </div>
-    <!-- </div> -->
+    </div>
   </div>
 </template>
 

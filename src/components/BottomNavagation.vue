@@ -5,7 +5,7 @@
         <div
           class="w-full box-border h-16 rounded-3xl bg-white border-2 border-create-separation"
         >
-          <div class="grid h-full max-w-lg grid-cols-3 px-4">
+          <div class="grid h-full grid-cols-3 px-6">
             <button
               @click="dashboardClicked"
               type="button"
@@ -41,12 +41,19 @@
 <script>
 import router from "@/main.js";
 export default {
+  data() {
+    return {
+      modalOpen: false
+    }
+
+  },
   methods: {
     dashboardClicked() {
       router.push({ name: "Dashboard" });
     },
     createClicked() {
-      alert("Create new");
+      this.modalOpen = !this.modalOpen
+      console.log(this.modalOpen)
     },
     profileClicked() {
       router.push({ name: "Profile" });
