@@ -4,7 +4,7 @@
       <section-header sectionHeader="Your Categories"/>
       <card-scroller/>
       <section-header sectionHeader="Your Tasks"/>
-      <task-scroller/>
+      <task-scroller class="mb-36"/>
       <bottom-navagation/>
     </div>
 </template>
