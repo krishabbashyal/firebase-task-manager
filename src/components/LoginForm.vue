@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-36">
+  <div class=" xs:mt-20 sm:mt-36">
     <h1 class="font-medium text-3xl">
       Welcome back, it is good to see you again!
     </h1>
@@ -49,15 +49,15 @@
         </button>
       </div>
     </form>
-    <!-- <div class="text-center">
+    <div class="text-center">
       <p class="mt-8 text-sm text-accent-neutral font-semibold">Or Login With</p>
       <button class="w-48 h-14 mt-3 bg-white border border-create-separation rounded-lg ">
         <img class="mx-auto" src="../assets/images/googleIcon.svg" alt="">
-      </button> -->
+      </button>
       <div class="font-semibold fixed bottom-10 right-0 left-0 z-50 text-center">
         <p>Don't have an account? <button @click="registerRedirect" class="text-accent-light">Register Now</button></p>
       </div>
-    <!-- </div> -->
+    </div>
   </div>
 </template>
 
