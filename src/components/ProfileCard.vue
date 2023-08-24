@@ -19,7 +19,7 @@
     <div class="bg-off-white rounded-t-full pb-10 -mt-10 -mx-4"></div>
     <div class="flex flex-col space-y-5 items-center">
       <button
-        class="mt-4 h-12 w-80 bg-accent-dark font-medium text-white rounded-lg"
+        class="mt-24 h-12 w-80 bg-accent-dark font-medium text-white rounded-lg"
       >
         Change Information
       </button>
