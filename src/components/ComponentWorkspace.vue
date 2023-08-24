@@ -1,16 +1,16 @@
 <template>
     <div>
-      <profile-card/>
+      <create-modal/>
     </div>
 </template>
 
 <script>
-import ProfileCard from './ProfileCard.vue';
+import CreateModal from './CreateModal.vue';
 
 
 export default {
   components: {
-    ProfileCard
+    CreateModal,
   },
   name: "ComponentWorkspace",
 };

@@ -1,9 +1,12 @@
 <template>
   <div>
-    <div class="fixed bottom-4 mx-4 right-0 left-0 z-50">
+    <div v-if="displayCreateProject" class="fixed z-50 top-0 left-0 bg-black bg-opacity-30 w-full h-full overflow-y-hidden">
+      <create-modal @childModalData="closeModal"/>
+    </div>
+    <div class="fixed bottom-4 mx-4 right-0 left-0 z-20">
       <div v-if="modalOpen">
-        <div class="flex gap-2 text-white mb-1.5 h-[56px] text-center font-medium">
-          <button class="bg-accent-light w-full rounded-full drop-shadow-lg border-t">Create New Project</button>
+          <div class="flex gap-2 text-white mb-1.5 h-[56px] text-center font-medium">
+          <button @click="createProjectClicked" class="bg-accent-light w-full rounded-full drop-shadow-lg border-t">Create New Project</button>
           <button class="bg-accent-light w-full rounded-full">Create New Task</button>
         </div>
       </div>
@@ -41,15 +44,27 @@
 
 <script>
 import router from "@/main.js";
+import CreateModal from "./CreateModal.vue";
+
 export default {
+  components: {
+    CreateModal
+  },
   data() {
     return {
       modalOpen: false,
+      displayCreateProject: false,
+      displayCreateTask: false
     };
   },
   methods: {
     dashboardClicked() {
       router.push({ name: "Dashboard" });
+    },
+    createProjectClicked(){
+      this.modalOpen = false
+      this.displayCreateProject = true
+      this.displayCreateTask = false
     },
     createClicked() {
       this.modalOpen = !this.modalOpen;
@@ -57,6 +72,11 @@ export default {
     },
     profileClicked() {
       router.push({ name: "Profile" });
+    },
+    closeModal(){
+      this.modalOpen = false
+      this.displayCreateProject = false
+      this.displayCreateProject = false
     },
   },
   name: "BottomNavagation",
