@@ -1,13 +1,16 @@
 <template>
   <div>
     <div v-if="displayCreateProject" class="fixed z-50 top-0 left-0 bg-black bg-opacity-30 w-full h-full overflow-y-hidden">
+      <create-modal formToDisplay='project' @childModalData="closeModal"/>
+    </div>
+    <div v-if="displayCreateTask" class="fixed z-50 top-0 left-0 bg-black bg-opacity-30 w-full h-full overflow-y-hidden">
       <create-modal @childModalData="closeModal"/>
     </div>
     <div class="fixed bottom-4 mx-4 right-0 left-0 z-20">
       <div v-if="modalOpen">
           <div class="flex gap-2 text-white mb-1.5 h-[56px] text-center font-medium">
           <button @click="createProjectClicked" class="bg-accent-light w-full rounded-full drop-shadow-lg border-t">Create New Project</button>
-          <button class="bg-accent-light w-full rounded-full">Create New Task</button>
+          <button @click="createTaskClicked" class="bg-accent-light w-full rounded-full">Create New Task</button>
         </div>
       </div>
       <div
@@ -66,6 +69,12 @@ export default {
       this.displayCreateProject = true
       this.displayCreateTask = false
     },
+
+    createTaskClicked(){
+      this.modalOpen = false
+      this.displayCreateProject = false
+      this.displayCreateTask = true
+    },
     createClicked() {
       this.modalOpen = !this.modalOpen;
       console.log(this.modalOpen);
@@ -76,7 +85,7 @@ export default {
     closeModal(){
       this.modalOpen = false
       this.displayCreateProject = false
-      this.displayCreateProject = false
+      this.displayCreateTask = false
     },
   },
   name: "BottomNavagation",
