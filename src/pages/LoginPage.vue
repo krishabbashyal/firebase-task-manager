@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <login-form/>
+  <div class="mx-4">
+    <login-form />
   </div>
 </template>
 

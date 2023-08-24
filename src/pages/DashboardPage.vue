@@ -1,12 +1,12 @@
 <template>
-    <div>
+    <div class="mx-4">
       <profile-bar/>
       <section-header sectionHeader="Your Project Categories"/>
       <card-scroller/>
       <section-header sectionHeader="Your Tasks"/>
-      <task-scroller class="mb-36"/>
-      <bottom-navagation/>
+      <task-scroller class="mb-28"/>
     </div>
+    <bottom-navagation/>
 </template>
 
 <script>

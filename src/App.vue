@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-4">
+  <div>
     <!-- DO NOT MAKE EDITS TO THIS FILE FOR TESTING |||| CREATE A NEW PAGE TO TEST NEW COMPONENTS -->
     <router-view></router-view>
   </div>
