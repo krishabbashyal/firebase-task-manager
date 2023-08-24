@@ -4,7 +4,7 @@
       Hello there, register an account to get started!
     </h1>
     <div v-if="showAlert">
-      <alert-display :alertText="alertMsg"/>
+      <alert-display :alertText="alertMsg" />
     </div>
     <form>
       <!-- input field for email -->
@@ -17,8 +17,7 @@
           emailError
             ? 'focus:outline-none placeholder-error-text border-error-border border-2 border-solid'
             : 'placeholder:text-gray border-create-separation',
-        ]"
-      />
+        ]" />
       <p v-if="emailError" class="text-error-text mt-1">
         {{ emailErrorMsg }}
       </p>
@@ -33,8 +32,7 @@
           displayNameError
             ? 'focus:outline-none placeholder-error-text border-error-border border-2 border-solid'
             : 'placeholder:text-gray border-create-separation',
-        ]"
-      />
+        ]" />
       <p v-if="displayNameError" class="text-error-text mt-1">
         {{ displayNameErrorMsg }}
       </p>
@@ -49,8 +47,7 @@
           passwordError
             ? 'focus:outline-none placeholder-error-text border-error-border border-2 border-solid'
             : 'placeholder:text-gray border-create-separation',
-        ]"
-      />
+        ]" />
       <p v-if="passwordError" class="text-error-text mt-1">
         {{ passwordErrorMsg }}
       </p>
@@ -65,8 +62,7 @@
           confirmPasswordError
             ? 'focus:outline-none placeholder-error-text border-error-border border-2 border-solid'
             : 'placeholder:text-gray border-create-separation',
-        ]"
-      />
+        ]" />
       <p v-if="confirmPasswordError" class="text-error-text mt-1">
         {{ confirmPasswordErrorMsg }}
       </p>
@@ -74,8 +70,7 @@
       <div class="flex flex-row justify-center items-center">
         <button
           @click.prevent="validateForm"
-          class="mt-10 h-14 w-80 bg-accent-dark font-medium text-white rounded-lg"
-        >
+          class="mt-10 h-14 w-80 bg-accent-dark font-medium text-white rounded-lg">
           Register
         </button>
       </div>
@@ -85,11 +80,10 @@
         Or Register With
       </p>
       <button
-        class="w-48 h-14 mt-3 bg-white border border-create-separation rounded-lg"
-      >
+        class="w-48 h-14 mt-3 bg-white border border-create-separation rounded-lg">
         <img class="mx-auto" src="../assets/images/googleIcon.svg" alt="" />
       </button>
-      <div class="font-semibold fixed bottom-10 right-0 left-0 z-50 text-center">
+      <div class="font-medium fixed bottom-10 right-0 left-0 z-50 text-center">
         <p>
           Already have an account?
           <button @click="loginRedirect" class="text-accent-light">
@@ -141,6 +135,7 @@ export default {
   },
   methods: {
     validateForm() {
+      this.showAlert = false
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       this.validEmail = emailPattern.test(this.userEmail);
 
@@ -210,8 +205,8 @@ export default {
         console.log(data);
         router.push({ name: "Dashboard" });
       } else {
-        this.showAlert = true
-        this.alertMsg = error.message
+        this.showAlert = true;
+        this.alertMsg = error.message;
       }
     },
 

@@ -3,12 +3,12 @@
     <div class="fixed bottom-4 mx-4 right-0 left-0 z-50">
       <div v-if="modalOpen">
         <div class="flex gap-2 text-white mb-1.5 h-[56px] text-center font-medium">
-          <button class="bg-accent-light w-full rounded-2xl">Create New Project</button>
-          <button class="bg-accent-light w-full rounded-2xl">Create New Task</button>
+          <button class="bg-accent-light w-full rounded-full drop-shadow-lg border-t">Create New Project</button>
+          <button class="bg-accent-light w-full rounded-full">Create New Task</button>
         </div>
       </div>
       <div
-        class="grid grid-cols-3 px-6 w-full box-border h-[60px] rounded-3xl bg-white border-2 border-create-separation">
+        class="grid grid-cols-3 px-6 w-full box-border h-[60px] rounded-full bg-white drop-shadow-lg border-2 ">
         <button
           @click="dashboardClicked"
           type="button"

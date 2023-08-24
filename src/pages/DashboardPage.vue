@@ -1,7 +1,7 @@
 <template>
     <div>
       <profile-bar/>
-      <section-header sectionHeader="Your Categories"/>
+      <section-header sectionHeader="Your Project Categories"/>
       <card-scroller/>
       <section-header sectionHeader="Your Tasks"/>
       <task-scroller class="mb-36"/>
