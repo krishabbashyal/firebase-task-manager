@@ -10,14 +10,14 @@
         There is an issue with the login and register pages where the form
         exceed the length of the container.
       </p>
-      <div class="flex flex-row justify-between mt-3.5">
+      <div class="flex flex-col sm:flex-row justify-between mt-3.5">
         <div class="flex flex-row space-x-2 text-sm">
           <p
-            class="bg-[#DFA874] bg-opacity-25 rounded-md text-[#DFA874] px-2 py-0.5">
+            class="bg-[#DFA874] bg-opacity-25 rounded-md text-[#DFA874] px-1.5 py-0.5">
             Low
           </p>
           <p
-            class="bg-[#5030E5] bg-opacity-25 rounded-md text-[#5030E5] px-2 py-0.5">
+            class="bg-[#5030E5] bg-opacity-25 rounded-md text-[#5030E5] px-1.5 py-0.5">
             Ready To Complete
         </p>
         </div>
