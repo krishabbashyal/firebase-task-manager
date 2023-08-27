@@ -1,24 +1,24 @@
 <template>
-  <div class="bg-white w-full py-3 pb-5 rounded-3xl flex-shrink-0">
+  <div class="bg-white w-full pt-2 pb-4 rounded-xl">
     <div class="px-4">
       <div class="flex flex-row justify-between items-center">
         <p class="text-[#787486] text-sm">JJ-123</p>
         <p class="text-lg">...</p>
       </div>
-      <p class="font-medium text-lg mt-1">Fix Mobile Scaling Issues</p>
-      <p class="leading-5 pt-1 line-clamp-3 text-[#787486] text-sm">
+      <p class="font-medium text-lg">Fix Mobile Scaling Issues</p>
+      <p class="line-clamp-3 text-[#787486] text-sm font-light">
         There is an issue with the login and register pages where the form
         exceed the length of the container.
       </p>
-      <div class="flex flex-col sm:flex-row justify-between mt-3.5">
-        <div class="flex flex-row space-x-2 text-sm">
+      <div class="flex flex-row justify-between mt-2.5">
+        <div class="flex flex-row space-x-2 text-sm ">
           <p
             class="bg-[#DFA874] bg-opacity-25 rounded-md text-[#DFA874] px-1.5 py-0.5">
             Low
           </p>
           <p
             class="bg-[#5030E5] bg-opacity-25 rounded-md text-[#5030E5] px-1.5 py-0.5">
-            Ready To Complete
+            In Progress
         </p>
         </div>
         <div class="flex flex-row space-x-2 text-sm">
