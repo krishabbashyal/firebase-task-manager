@@ -1,5 +1,6 @@
 <template>
-  <div>
+      <div class="mx-4">
+
     <component-workspace />
   </div>
 </template>
