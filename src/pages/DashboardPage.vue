@@ -1,9 +1,9 @@
 <template>
     <div class="mx-4">
       <profile-bar/>
-      <section-header sectionHeader="Your Project Categories"/>
+      <section-header sectionHeader="Your Recent Projects"/>
       <card-scroller/>
-      <section-header sectionHeader="Your Tasks"/>
+      <section-header sectionHeader="Your Assigned Tasks"/>
       <task-scroller class="mb-28"/>
     </div>
     <bottom-navagation/>

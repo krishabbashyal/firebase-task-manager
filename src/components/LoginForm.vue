@@ -1,5 +1,5 @@
 <template>
-  <div class="xs:mt-20 sm:mt-36">
+  <div class="mt-[30%]">
     <h1 class="font-medium text-3xl">
       Welcome back, it is good to see you again!
     </h1>
@@ -12,7 +12,7 @@
         type="email"
         v-model="userEmail"
         placeholder="Email"
-        class="placeholder:font-medium w-full h-14 mt-7 border border-create-separation rounded-lg pl-4"
+        class="placeholder:font-medium w-full h-12 mt-7 border border-create-separation rounded-lg pl-4"
         :class="[
           emailError
             ? 'focus:outline-none placeholder-error-text border-error-border border-2 border-solid'
@@ -25,7 +25,7 @@
         type="password"
         v-model="userPassword"
         placeholder="Password"
-        class="placeholder:font-medium w-full h-14 mt-3 border border-create-separation rounded-lg pl-4"
+        class="placeholder:font-medium w-full h-12 mt-3 border border-create-separation rounded-lg pl-4"
         :class="[
           passwordError
             ? 'focus:outline-none placeholder-error-text border-error-border border-2 border-solid'
@@ -41,28 +41,28 @@
       <div class="flex flex-row justify-center items-center">
         <button
           @click.prevent="validateForm"
-          class="mt-10 h-14 w-80 bg-accent-dark font-medium text-white rounded-lg">
+          class="mt-8 h-14 w-80 bg-accent-dark font-medium text-white rounded-lg">
           Login
         </button>
       </div>
     </form>
-    <div class="text-center">
+    <!-- <div class="text-center">
       <p class="mt-8 text-sm text-accent-neutral font-semibold">
         Or Login With
       </p>
       <button
         class="w-48 h-14 mt-3 bg-white border border-create-separation rounded-lg">
         <img class="mx-auto" src="../assets/images/googleIcon.svg" alt="" />
-      </button>
-      <div class="font-medium fixed bottom-10 right-0 left-0 z-50 text-center">
-        <p>
-          Don't have an account?
-          <button @click="registerRedirect" class="text-accent-light">
-            Register Now
-          </button>
-        </p>
-      </div>
+      </button> -->
+    <div class="font-medium fixed bottom-10 right-0 left-0 z-50 text-center">
+      <p>
+        Don't have an account?
+        <button @click="registerRedirect" class="text-accent-light">
+          Register Now
+        </button>
+      </p>
     </div>
+    <!-- </div> -->
   </div>
 </template>
 
@@ -94,7 +94,7 @@ export default {
   },
   methods: {
     validateForm() {
-      this.showAlert = false
+      this.showAlert = false;
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       this.validEmail = emailPattern.test(this.userEmail);
 
