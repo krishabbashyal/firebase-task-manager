@@ -11,23 +11,34 @@
       <create-modal @childModalData="closeModal" />
     </div>
     <div class="fixed bottom-0 right-0 left-0">
-      <div v-if="createNewClicked">
-        <div
-          class="flex gap-2 text-white mb-1.5 h-[56px] text-center font-medium mx-4">
-          <button
-            @click="createProjectClicked"
-            :class="[createNewClicked ? 'openCreateOptions bg-accent-light w-full shadow-md rounded-full border-t' : 'closeCreateOptions']"
-            class="">
-            Create New Project
-          </button>
-          <button
-            @click="createTaskClicked"
-            :class="[createNewClicked ? 'openCreateOptions bg-accent-light w-full shadow-md rounded-full' : 'closeCreateOptions']"
-            class="">
-            Create New Task
-          </button>
+      <Transition>
+        <div v-if="createNewClicked">
+          <div
+            class="flex gap-2 text-white mb-1.5 h-[56px] text-center font-medium mx-4">
+            <button
+              @click="createProjectClicked"
+              :class="[
+                createNewClicked
+                  ? 'openCreateOptions bg-accent-light w-full shadow-md rounded-full border-t'
+                  : 'closeCreateOptions',
+              ]"
+              class="">
+              Create New Project
+            </button>
+            <button
+              @click="createTaskClicked"
+              :class="[
+                createNewClicked
+                  ? 'openCreateOptions bg-accent-light w-full shadow-md rounded-full'
+                  : 'closeCreateOptions',
+              ]"
+              class="">
+              Create New Task
+            </button>
+          </div>
         </div>
-      </div>
+      </Transition>
+
       <div
         class="grid grid-cols-3 px-6 w-full h-[60px] border-t border-create-separation shadow-inner bg-white">
         <button
@@ -132,6 +143,15 @@ export default {
 </script>
 
 <style scoped>
+
+.v-leave-active {
+  transition: opacity 250ms ease;
+  
+}
+
+.v-leave-to {
+  opacity: 0%;
+}
 
 .rotate-animation {
   animation: rotateIcon 250ms linear forwards;
