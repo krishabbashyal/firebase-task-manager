@@ -34,16 +34,17 @@
           class="inline-flex flex-col items-center justify-center">
           <img src="../assets/images/homeIcon.svg" alt="" />
         </button>
-        <button
-          @click="createClicked"
-          type="button"
-          class="inline-flex flex-col items-center justify-center">
-          <div
-            class="flex z-50 items-center justify-center w-16 h-16 bg-red-100 rounded-full -mt-10">
-            <img src="../assets/images/crossIcon.svg" :class="[ modalOpen ? 'rotate-45 fill-red-950' : '' ]"
-                                                       class='w-6'>
-          </div>
-        </button>
+        <button @click="createClicked" type="button" class="inline-flex flex-col items-center justify-center">
+    <div class="flex z-50 items-center justify-center w-16 h-16 text-4xl text-white bg-accent-dark rounded-full -mt-10">
+        <svg 
+          :class="[modalOpen ? 'rotate-animation' : 'unrotate-animation stroke-white']"
+          width="26" height="26" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7 1L7 13" stroke-width="2" stroke-linecap="round"/>
+          <path d="M13 7L1 7" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+    </div>
+  </button>
+
         <button
           @click="profileClicked"
           type="button"
@@ -101,3 +102,36 @@ export default {
   name: "BottomNavagation",
 };
 </script>
+
+<style scoped>
+.rotate-animation {
+  animation: rotateIcon 0.2s linear forwards;
+}
+
+@keyframes rotateIcon {
+  0% {
+    transform: rotate(0deg);
+    stroke: white;
+  }
+  100% {
+    transform: rotate(135deg);
+    stroke: #EF4444
+  }
+}
+
+.unrotate-animation {
+  animation: unrotateIcon 0.2s linear backwards;
+}
+
+@keyframes unrotateIcon {
+  0% {
+    transform: rotate(135deg);
+    stroke: #EF4444
+  }
+  100% {
+    transform: rotate(0deg);
+    stroke: white;
+
+  }
+}
+</style>
