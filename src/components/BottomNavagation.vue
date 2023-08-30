@@ -128,7 +128,7 @@ export default {
 
 <style scoped>
 .rotate-animation {
-  animation: rotateIcon 0.3s linear forwards;
+  animation: rotateIcon 0.2s linear forwards;
 }
 
 @keyframes rotateIcon {
@@ -147,7 +147,7 @@ export default {
 }
 
 .unrotate-animation {
-  animation: unrotateIcon .3s linear backwards;
+  animation: unrotateIcon .2s linear backwards;
 }
 
 @keyframes unrotateIcon {
