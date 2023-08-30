@@ -6,7 +6,7 @@
       <div class="flex flex-row w-full justify-end">
         <button @click="closeFormModal" class="hover:bg-create-separation">
           <img
-            class="rotate-45 w-6"
+            class="rotate-45 w-6 p-1"
             src="../assets/images/crossIcon.svg"
             alt="" />
         </button>
@@ -63,7 +63,7 @@
         <div class="flex flex-row w-full justify-end">
           <button @click="closeFormModal" class="hover:bg-create-separation">
             <img
-              class="rotate-45 w-6"
+              class="rotate-45 w-6 p-1"
               src="../assets/images/crossIcon.svg"
               alt="" />
           </button>

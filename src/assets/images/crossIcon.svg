@@ -1,6 +1,5 @@
-            <svg 
-              :class="[modalOpen ? 'rotate-45 stroke-purple-400' : '']" 
-              width="26" height="26" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
-              <path d="M7 1L7 13" stroke="red" stroke-width="2" stroke-linecap="round"/>
-              <path d="M13 7L1 7" stroke="red" stroke-width="2" stroke-linecap="round"/>
-            </svg>
+<svg 
+  width="26" height="26" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+  <path d="M7 1L7 13" stroke="black" stroke-width="2" stroke-linecap="round"/>
+  <path d="M13 7L1 7" stroke="black" stroke-width="2" stroke-linecap="round"/>
+</svg>
