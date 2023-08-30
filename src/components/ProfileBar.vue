@@ -6,14 +6,8 @@
         <p class="-mt-0.5 text-[#666666]">Let’s have a productive day.</p>
       </div>
       <div>
-        <button
-          @click="profileClicked"
-          type="button"
-          class="inline-flex flex-col items-center justify-center">
-          <img
-            class="w-[3.125rem] h-[3.125rem] rounded-full"
-            src="../assets/images/profilePicture.svg"
-            alt="" />
+        <button @click="profileClicked" type="button" class="inline-flex flex-col items-center justify-center">
+          <img class="w-[3.125rem] h-[3.125rem] rounded-full" src="../assets/images/profilePicture.svg" alt="" />
         </button>
       </div>
     </div>
@@ -38,9 +32,7 @@ export default {
   },
 
   async beforeMount() {
-    const { data, error } = await supabase
-      .from("profiles")
-      .select("display_name");
+    const { data, error } = await supabase.from("profiles").select("display_name");
     if (error) {
       console.log(error);
     } else {

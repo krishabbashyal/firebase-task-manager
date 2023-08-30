@@ -1,8 +1,6 @@
 <template>
   <div class="mt-[30%]">
-    <h1 class="font-medium text-3xl">
-      Welcome back, it is good to see you again!
-    </h1>
+    <h1 class="font-medium text-3xl">Welcome back, it is good to see you again!</h1>
     <div v-if="showAlert">
       <alert-display :alertText="alertMsg" />
     </div>
@@ -14,9 +12,7 @@
         placeholder="Email"
         class="placeholder:font-medium w-full h-12 mt-7 border border-create-separation rounded-lg pl-4"
         :class="[
-          emailError
-            ? 'focus:outline-none placeholder-error-text border-error-border border-2 border-solid'
-            : 'placeholder:form-placeholder border-create-separation',
+          emailError ? 'focus:outline-none placeholder-error-text border-error-border border-2 border-solid' : 'placeholder:form-placeholder border-create-separation',
         ]" />
       <p v-if="emailError" class="mt-1 text-error-text">{{ emailErrorMsg }}</p>
 
@@ -27,9 +23,7 @@
         placeholder="Password"
         class="placeholder:font-medium w-full h-12 mt-3 border border-create-separation rounded-lg pl-4"
         :class="[
-          passwordError
-            ? 'focus:outline-none placeholder-error-text border-error-border border-2 border-solid'
-            : 'placeholder:form-placeholder border-create-separation',
+          passwordError ? 'focus:outline-none placeholder-error-text border-error-border border-2 border-solid' : 'placeholder:form-placeholder border-create-separation',
         ]" />
       <p v-if="passwordError" class="text-error-text mt-1">
         {{ passwordErrorMsg }}
@@ -39,11 +33,7 @@
         <p class="text-accent-light font-medium mt-3">Forgot Password?</p>
       </div>
       <div class="flex flex-row justify-center items-center">
-        <button
-          @click.prevent="validateForm"
-          class="mt-8 h-14 w-80 bg-accent-dark font-medium text-white rounded-lg">
-          Login
-        </button>
+        <button @click.prevent="validateForm" class="mt-8 h-14 w-80 bg-accent-dark font-medium text-white rounded-lg">Login</button>
       </div>
     </form>
     <!-- <div class="text-center">
@@ -57,9 +47,7 @@
     <div class="font-medium fixed bottom-10 right-0 left-0 z-50 text-center">
       <p>
         Don't have an account?
-        <button @click="registerRedirect" class="text-accent-light">
-          Register Now
-        </button>
+        <button @click="registerRedirect" class="text-accent-light">Register Now</button>
       </p>
     </div>
     <!-- </div> -->

@@ -1,8 +1,6 @@
 <template>
   <div class="xs:mt-[25%] sm:mt-[30%]">
-    <h1 class="font-medium text-3xl">
-      Hello there, register an account to get started!
-    </h1>
+    <h1 class="font-medium text-3xl">Hello there, register an account to get started!</h1>
     <div v-if="showAlert">
       <alert-display :alertText="alertMsg" />
     </div>
@@ -13,11 +11,7 @@
         v-model="userEmail"
         placeholder="Email"
         class="placeholder:font-medium w-full h-12 mt-7 border border-create-separation rounded-lg pl-4"
-        :class="[
-          emailError
-            ? 'focus:outline-none placeholder-error-text border-error-border border-2 border-solid'
-            : 'placeholder:text-gray border-create-separation',
-        ]" />
+        :class="[emailError ? 'focus:outline-none placeholder-error-text border-error-border border-2 border-solid' : 'placeholder:text-gray border-create-separation']" />
       <p v-if="emailError" class="text-error-text">
         {{ emailErrorMsg }}
       </p>
@@ -29,9 +23,7 @@
         placeholder="Display Name"
         class="placeholder:font-medium w-full h-12 mt-3 border border-create-separation rounded-lg pl-4"
         :class="[
-          displayNameError
-            ? 'focus:outline-none placeholder-error-text border-error-border border-2 border-solid'
-            : 'placeholder:text-gray border-create-separation',
+          displayNameError ? 'focus:outline-none placeholder-error-text border-error-border border-2 border-solid' : 'placeholder:text-gray border-create-separation',
         ]" />
       <p v-if="displayNameError" class="text-error-text">
         {{ displayNameErrorMsg }}
@@ -43,11 +35,7 @@
         v-model="userPassword"
         placeholder="Password"
         class="placeholder:font-medium w-full h-12 mt-3 border border-create-separation rounded-lg pl-4"
-        :class="[
-          passwordError
-            ? 'focus:outline-none placeholder-error-text border-error-border border-2 border-solid'
-            : 'placeholder:text-gray border-create-separation',
-        ]" />
+        :class="[passwordError ? 'focus:outline-none placeholder-error-text border-error-border border-2 border-solid' : 'placeholder:text-gray border-create-separation']" />
       <p v-if="passwordError" class="text-error-text">
         {{ passwordErrorMsg }}
       </p>
@@ -59,20 +47,14 @@
         placeholder="Confirm Password"
         class="placeholder:font-medium w-full h-12 mt-3 border border-create-separation rounded-lg pl-4"
         :class="[
-          confirmPasswordError
-            ? 'focus:outline-none placeholder-error-text border-error-border border-2 border-solid'
-            : 'placeholder:text-gray border-create-separation',
+          confirmPasswordError ? 'focus:outline-none placeholder-error-text border-error-border border-2 border-solid' : 'placeholder:text-gray border-create-separation',
         ]" />
       <p v-if="confirmPasswordError" class="text-error-text">
         {{ confirmPasswordErrorMsg }}
       </p>
 
       <div class="flex flex-row justify-center items-center">
-        <button
-          @click.prevent="validateForm"
-          class="mt-8 h-14 w-80 bg-accent-dark font-medium text-white rounded-lg">
-          Register
-        </button>
+        <button @click.prevent="validateForm" class="mt-8 h-14 w-80 bg-accent-dark font-medium text-white rounded-lg">Register</button>
       </div>
     </form>
     <!-- <div class="text-center">
@@ -83,14 +65,12 @@
         class="w-48 h-14 mt-3 bg-white border border-create-separation rounded-lg">
         <img class="mx-auto" src="../assets/images/googleIcon.svg" alt="" />
       </button> -->
-      <div class="font-medium fixed bottom-10 right-0 left-0 z-50 text-center"> 
-        <p>
-          Already have an account?
-          <button @click="loginRedirect" class="text-accent-light">
-            Login Now
-          </button>
-        </p>
-      </div>
+    <div class="font-medium fixed bottom-10 right-0 left-0 z-50 text-center">
+      <p>
+        Already have an account?
+        <button @click="loginRedirect" class="text-accent-light">Login Now</button>
+      </p>
+    </div>
     <!-- </div> -->
   </div>
 </template>
@@ -135,7 +115,7 @@ export default {
   },
   methods: {
     validateForm() {
-      this.showAlert = false
+      this.showAlert = false;
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       this.validEmail = emailPattern.test(this.userEmail);
 
@@ -172,12 +152,7 @@ export default {
         }
       }
 
-      if (
-        !this.emailError &&
-        !this.displayNameError &&
-        !this.passwordError &&
-        !this.confirmPasswordError
-      ) {
+      if (!this.emailError && !this.displayNameError && !this.passwordError && !this.confirmPasswordError) {
         this.submitForm();
       }
     },

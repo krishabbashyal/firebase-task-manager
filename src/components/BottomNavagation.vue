@@ -1,65 +1,35 @@
 <template>
   <div>
-    <div
-      v-if="displayCreateProject"
-      class="fixed z-50 top-0 left-0 bg-black bg-opacity-30 w-full h-full overflow-y-hidden">
+    <div v-if="displayCreateProject" class="fixed z-50 top-0 left-0 bg-black bg-opacity-30 w-full h-full overflow-y-hidden">
       <create-modal formToDisplay="project" @childModalData="closeModal" />
     </div>
-    <div
-      v-if="displayCreateTask"
-      class="fixed z-50 top-0 left-0 bg-black bg-opacity-30 w-full h-full overflow-y-hidden">
+    <div v-if="displayCreateTask" class="fixed z-50 top-0 left-0 bg-black bg-opacity-30 w-full h-full overflow-y-hidden">
       <create-modal @childModalData="closeModal" />
     </div>
     <div class="fixed bottom-0 right-0 left-0">
       <Transition>
         <div v-if="createNewClicked">
-          <div
-            class="flex gap-2 text-white mb-1.5 h-[56px] text-center font-medium mx-4">
+          <div class="flex gap-2 text-white mb-1.5 h-[56px] text-center font-medium mx-4">
             <button
               @click="createProjectClicked"
-              :class="[
-                createNewClicked
-                  ? 'openCreateOptions bg-accent-light w-full shadow-md rounded-full border-t'
-                  : 'closeCreateOptions',
-              ]"
+              :class="[createNewClicked ? 'openCreateOptions bg-accent-light w-full shadow-md rounded-full border-t' : 'closeCreateOptions']"
               class="">
               Create New Project
             </button>
-            <button
-              @click="createTaskClicked"
-              :class="[
-                createNewClicked
-                  ? 'openCreateOptions bg-accent-light w-full shadow-md rounded-full'
-                  : 'closeCreateOptions',
-              ]"
-              class="">
+            <button @click="createTaskClicked" :class="[createNewClicked ? 'openCreateOptions bg-accent-light w-full shadow-md rounded-full' : 'closeCreateOptions']" class="">
               Create New Task
             </button>
           </div>
         </div>
       </Transition>
-
-      <div
-        class="grid grid-cols-3 px-6 w-full h-[60px] border-t border-create-separation shadow-inner bg-white">
-        <button
-          @click="dashboardClicked"
-          type="button"
-          class="inline-flex flex-col items-center justify-center">
+      <div class="grid grid-cols-3 px-6 w-full h-[60px] border-t border-create-separation shadow-inner bg-white">
+        <button @click="dashboardClicked" type="button" class="inline-flex flex-col items-center justify-center">
           <img src="../assets/images/homeIcon.svg" alt="" />
         </button>
-        <button
-          @click="createClicked"
-          type="button"
-          class="inline-flex flex-col items-center justify-center">
-          <div
-            v-if="toggleAnimations"
-            class="flex z-50 items-center justify-center w-16 h-16 text-4xl text-white bg-accent-dark rounded-full -mt-10">
+        <button @click="createClicked" type="button" class="inline-flex flex-col items-center justify-center">
+          <div v-if="toggleAnimations" class="flex z-50 items-center justify-center w-16 h-16 text-4xl text-white bg-accent-dark rounded-full -mt-10">
             <svg
-              :class="[
-                createNewClicked
-                  ? 'rotate-animation'
-                  : 'unrotate-animation stroke-white',
-              ]"
+              :class="[createNewClicked ? 'rotate-animation' : 'unrotate-animation stroke-white']"
               width="26"
               height="26"
               viewBox="0 0 14 14"
@@ -68,25 +38,14 @@
               <path d="M13 7L1 7" stroke-width="2" stroke-linecap="round" />
             </svg>
           </div>
-          <div
-            v-else
-            class="flex z-50 items-center justify-center w-16 h-16 text-4xl text-white bg-accent-dark rounded-full -mt-10">
-            <svg
-              class="stroke-white"
-              width="26"
-              height="26"
-              viewBox="0 0 14 14"
-              xmlns="http://www.w3.org/2000/svg">
+          <div v-else class="flex z-50 items-center justify-center w-16 h-16 text-4xl text-white bg-accent-dark rounded-full -mt-10">
+            <svg class="stroke-white" width="26" height="26" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
               <path d="M7 1L7 13" stroke-width="2" stroke-linecap="round" />
               <path d="M13 7L1 7" stroke-width="2" stroke-linecap="round" />
             </svg>
           </div>
         </button>
-
-        <button
-          @click="profileClicked"
-          type="button"
-          class="inline-flex flex-col items-center justify-center">
+        <button @click="profileClicked" type="button" class="inline-flex flex-col items-center justify-center">
           <img src="../assets/images/profileIcon.svg" alt="" />
         </button>
       </div>
@@ -143,10 +102,8 @@ export default {
 </script>
 
 <style scoped>
-
 .v-leave-active {
   transition: opacity 250ms ease;
-  
 }
 
 .v-leave-to {

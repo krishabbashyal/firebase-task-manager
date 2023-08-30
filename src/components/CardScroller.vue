@@ -1,23 +1,19 @@
 <template>
-    <div class="flex scroll-hider overflow-x-auto w-full space-x-3">
-      <project-category-card/>
-      <project-category-card/>
-      <project-category-card/>
-      <project-category-card/>
-    </div>
-</template>s
+  <div class="flex scroll-hider overflow-x-auto w-full space-x-3">
+    <project-category-card />
+    <project-category-card />
+    <project-category-card />
+    <project-category-card />
+  </div>
+</template>
+s
 
 <script>
-
-import ProjectCategoryCard from "../components/ProjectCategoryCard.vue"
-
-
+import ProjectCategoryCard from "../components/ProjectCategoryCard.vue";
 
 export default {
-
-
   components: {
-    ProjectCategoryCard
+    ProjectCategoryCard,
   },
   name: "CardScroller",
 };

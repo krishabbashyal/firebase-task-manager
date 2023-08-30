@@ -8,10 +8,7 @@
         </button>
       </div>
       <p class="font-medium text-lg">Fix Mobile Scaling Issues</p>
-      <p class="line-clamp-3 text-[#787486] text-sm font-light">
-        There is an issue with the login and register pages where the form
-        exceed the length of the container.
-      </p>
+      <p class="line-clamp-3 text-[#787486] text-sm font-light">There is an issue with the login and register pages where the form exceed the length of the container.</p>
       <div class="flex flex-row justify-end text-sm space-x-2 mt-1">
         <p class="py-0.5 text-[#787486]">12 Comments</p>
         <p class="py-0.5 text-[#787486]">2 Files</p>

@@ -1,12 +1,11 @@
 <template>
-      <div class="mx-4">
-
-    <register-form/>
+  <div class="mx-4">
+    <register-form />
   </div>
 </template>
 
 <script>
-import RegisterForm from '../components/RegisterForm.vue';
+import RegisterForm from "../components/RegisterForm.vue";
 
 export default {
   components: {
@@ -15,4 +14,3 @@ export default {
   name: "LoginPage",
 };
 </script>
-
