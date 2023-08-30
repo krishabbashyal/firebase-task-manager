@@ -1,5 +1,4 @@
 <template>
-  <div>
     <div
       v-if="displayCreateProject"
       class="fixed z-50 top-0 left-0 bg-black bg-opacity-30 w-full h-full overflow-y-hidden">
@@ -53,7 +52,6 @@
         </button>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
