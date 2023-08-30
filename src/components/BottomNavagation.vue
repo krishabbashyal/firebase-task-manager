@@ -14,16 +14,18 @@
       <div v-if="createNewClicked">
         <div
           class="flex gap-2 text-white mb-1.5 h-[56px] text-center font-medium mx-4">
-            <button
-              @click="createProjectClicked"
-              class="bg-accent-light w-full shadow-md rounded-full border-t">
-              Create New Project
-            </button>
-            <button
-              @click="createTaskClicked"
-              class="bg-accent-light w-full shadow-md rounded-full">
-              Create New Task
-            </button>
+          <button
+            @click="createProjectClicked"
+            :class="[createNewClicked ? 'openCreateOptions bg-accent-light w-full shadow-md rounded-full border-t' : 'closeCreateOptions']"
+            class="">
+            Create New Project
+          </button>
+          <button
+            @click="createTaskClicked"
+            :class="[createNewClicked ? 'openCreateOptions bg-accent-light w-full shadow-md rounded-full' : 'closeCreateOptions']"
+            class="">
+            Create New Task
+          </button>
         </div>
       </div>
       <div
@@ -38,7 +40,8 @@
           @click="createClicked"
           type="button"
           class="inline-flex flex-col items-center justify-center">
-          <div v-if="toggleAnimations"
+          <div
+            v-if="toggleAnimations"
             class="flex z-50 items-center justify-center w-16 h-16 text-4xl text-white bg-accent-dark rounded-full -mt-10">
             <svg
               :class="[
@@ -54,7 +57,9 @@
               <path d="M13 7L1 7" stroke-width="2" stroke-linecap="round" />
             </svg>
           </div>
-          <div v-else class="flex z-50 items-center justify-center w-16 h-16 text-4xl text-white bg-accent-dark rounded-full -mt-10">
+          <div
+            v-else
+            class="flex z-50 items-center justify-center w-16 h-16 text-4xl text-white bg-accent-dark rounded-full -mt-10">
             <svg
               class="stroke-white"
               width="26"
@@ -91,7 +96,7 @@ export default {
       createNewClicked: false,
       displayCreateProject: false,
       displayCreateTask: false,
-      toggleAnimations: false
+      toggleAnimations: false,
     };
   },
   methods: {
@@ -110,8 +115,8 @@ export default {
       this.displayCreateTask = true;
     },
     createClicked() {
-      this.toggleAnimations = true
       this.createNewClicked = !this.createNewClicked;
+      this.toggleAnimations = true;
     },
     profileClicked() {
       router.push({ name: "Profile" });
@@ -127,8 +132,9 @@ export default {
 </script>
 
 <style scoped>
+
 .rotate-animation {
-  animation: rotateIcon 0.2s linear forwards;
+  animation: rotateIcon 250ms linear forwards;
 }
 
 @keyframes rotateIcon {
@@ -142,12 +148,8 @@ export default {
   }
 }
 
-.scale-animation {
-  transition: transform 2s;
-}
-
 .unrotate-animation {
-  animation: unrotateIcon .2s linear backwards;
+  animation: unrotateIcon 250ms linear backwards;
 }
 
 @keyframes unrotateIcon {
@@ -158,6 +160,42 @@ export default {
   100% {
     transform: rotate(0deg);
     stroke: white;
+  }
+}
+
+.openCreateOptions {
+  animation: 250ms openCreateOptions;
+  margin-top: 0%;
+}
+
+@keyframes openCreateOptions {
+  from {
+    margin-top: 10%;
+    height: 8px;
+    opacity: 0;
+  }
+  to {
+    margin-top: 0%;
+    height: 100%;
+    opacity: 100%;
+  }
+}
+
+.closeCreateOptions {
+  animation: 250ms closeCreateOptions;
+  margin-top: 0%;
+}
+
+@keyframes closeCreateOptions {
+  from {
+    margin-top: 0%;
+    height: 100%;
+    opacity: 100%;
+  }
+  to {
+    margin-top: 10%;
+    height: 8px;
+    opacity: 0%;
   }
 }
 </style>
