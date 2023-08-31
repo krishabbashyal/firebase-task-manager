@@ -33,7 +33,7 @@ export default {
   },
   methods: {
     closeFormModal() {
-      this.$emit("closeModal", false);
+      this.$emit("displayModal", false);
     },
   },
   name: "CreateModal",

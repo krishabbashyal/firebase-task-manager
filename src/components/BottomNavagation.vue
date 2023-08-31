@@ -1,10 +1,10 @@
 <template>
   <div>
     <div v-if="displayCreateProject" class="fixed z-50 top-0 left-0 bg-black bg-opacity-30 w-full h-full overflow-y-hidden">
-      <create-modal @childModalData="closeModal" />
+      <create-project-modal @displayModal="closeCreateNewModals" />
     </div>
     <div v-if="displayCreateTask" class="fixed z-50 top-0 left-0 bg-black bg-opacity-30 w-full h-full overflow-y-hidden">
-      <create-modal @childModalData="closeModal" />
+      <create-task-modal @displayModal="closeCreateNewModals" />
     </div>
     <div class="fixed bottom-0 right-0 left-0">
       <Transition>
@@ -55,12 +55,15 @@
 
 <script>
 import router from "@/main.js";
-import CreateModal from "./CreateModal.vue";
+import CreateProjectModal from "./CreateProjectModal.vue";
+import CreateTaskModal from "./CreateTaskModal.vue";
 
 export default {
   components: {
-    CreateModal,
-  },
+    CreateProjectModal,
+    CreateTaskModal
+
+    },
   data() {
     return {
       createNewClicked: false,
@@ -91,7 +94,7 @@ export default {
     profileClicked() {
       router.push({ name: "Profile" });
     },
-    closeModal() {
+    closeCreateNewModals() {
       this.createNewClicked = false;
       this.displayCreateProject = false;
       this.displayCreateTask = false;
