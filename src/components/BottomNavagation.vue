@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-if="displayCreateProject" class="fixed z-50 top-0 left-0 bg-black bg-opacity-30 w-full h-full overflow-y-hidden">
-      <create-modal formToDisplay="project" @childModalData="closeModal" />
+      <create-modal @childModalData="closeModal" />
     </div>
     <div v-if="displayCreateTask" class="fixed z-50 top-0 left-0 bg-black bg-opacity-30 w-full h-full overflow-y-hidden">
       <create-modal @childModalData="closeModal" />
