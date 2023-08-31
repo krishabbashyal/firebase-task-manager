@@ -34,7 +34,7 @@
 
 <script>
 import router from "@/main.js";
-import CreateModal from "./CreateModal.vue";
+import CreateModal from "./CreateTaskModal.vue";
 
 export default {
   components: {
