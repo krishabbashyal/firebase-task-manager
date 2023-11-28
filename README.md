@@ -1,4 +1,5 @@
 # First version of the Mosaic application:
+you may be looking at the wrong repo, you can find the new one here.
 
 ## Welcome to Mosaic: Your Ultimate Task Management Tool
 
