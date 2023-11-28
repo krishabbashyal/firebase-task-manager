@@ -1,3 +1,5 @@
+Repo for first version of the mosaic application
+
 # Welcome to Mosaic: Your Ultimate Task Management Tool
 
 Mosaic is a powerful software designed to facilitate the systematic deconstruction and management of tasks necessary for successfully completing projects or assignments, whether pursued individually or collaboratively within a team.
